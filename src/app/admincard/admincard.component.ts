@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServiceService } from '../service.service'
-
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  selector: 'app-admincard',
+  templateUrl: './admincard.component.html',
+  styleUrls: ['./admincard.component.css']
 })
-
-export class CardComponent implements OnInit {
-  
+export class AdmincardComponent implements OnInit {
   products= [{
     serviceId: '',
     servicename: '',
@@ -20,12 +17,25 @@ export class CardComponent implements OnInit {
 }]
   constructor(private productService: ServiceService,private router: Router) { }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.productService.getProducts().subscribe((data)=>{
       this.products=JSON.parse(JSON.stringify(data));
   })
+}
+deleteProduct(product:any)
+  {
+    this.productService.deleteProduct(product._id)
+      .subscribe((data) => {
+        this.products = this.products.filter(p => p !== product);
+      })
+  
+
   }
-  hire(){
-    alert("will contact you soon")
+
+  editProduct(product:any)
+  {
+    localStorage.setItem("editProductId", product._id.toString());
+    this.router.navigate(['/update']);
+
   }
 }

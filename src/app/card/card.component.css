@@ -1,4 +1,4 @@
-.card-header {
+/* .card-header {
     background-color: grey;
     text-align: center;
     font-size: large;
@@ -8,4 +8,15 @@
 
 .card-body {
     padding: 3%;
+} */
+
+.container {
+    padding: 1%;
+    background-color: rgb(71, 66, 66);
+}
+
+.card {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: small
 }

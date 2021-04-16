@@ -1,0 +1,44 @@
+<div class='card'>
+    <div class='card-header'>
+
+    </div>
+
+    <div class='card-body'>
+        <div class='table-responsive'>
+            <table class='table bg-pic' *ngIf='products && products.length'>
+                <thead>
+                    <tr>
+                        <!-- <th> -->
+                        <!-- <button class='btn btn-primary'
+                (click)='toggleImage()'>
+                  {{showImage? 'Hide' : 'Show'}} Image
+                </button> -->
+                        <!-- </th> -->
+                        <th>servicename</th>
+                        <th>serviceservice</th>
+                        <th>servicephonenumber</th>
+                        <th>servicepincode</th>
+                        <th>servicearea</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr *ngFor='let product of products'>
+
+                        <td>{{ product.servicename }}</td>
+                        <td>{{ product.serviceservice }}</td>
+                        <td>{{ product.servicephonenumber }}</td>
+                        <td>{{ product.servicepincode }}</td>
+                        <td>{{ product.servicearea }}</td>
+                        <td>
+                            <button class="btn btn-warning" style="cursor:pointer" (click)="editProduct(product)" style="margin-left: 20px;"> Edit</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" style="cursor:pointer" (click)="deleteProduct(product)"> Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

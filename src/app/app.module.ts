@@ -29,7 +29,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 // MDB Angular Free
 import { CheckboxModule, WavesModule, ButtonsModule, InputsModule, IconsModule, CardsModule } from 'angular-bootstrap-md';
-import { SignupComponent } from './signup/signup.component'
+import { SignupComponent } from './signup/signup.component';
+import { JoinformComponent } from './joinform/joinform.component';
+import { AdmincardComponent } from './admincard/admincard.component';
+import { UpdateComponent } from './update/update.component';
+
 
 
 
@@ -43,6 +47,10 @@ import { SignupComponent } from './signup/signup.component'
     CardComponent,
     LoginpageComponent,
     SignupComponent,
+    JoinformComponent,
+    AdmincardComponent,
+    UpdateComponent,
+  
   
     
     
